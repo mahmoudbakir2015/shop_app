@@ -19,10 +19,10 @@ class ProductScreen extends StatelessWidget {
                   cubit.categoryModel!,
                   context,
                 )
-              : Center(
+              : const Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       CircularProgressIndicator(),
                       Text("check network !!!"),
                     ],

@@ -22,10 +22,10 @@ class CategoriesScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) =>
                     buildCatItem(cubit.categoryModel!.data!.data![index]),
               )
-            : Center(
+            : const Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     CircularProgressIndicator(),
                     Text("check network !!!"),
                   ],
@@ -41,8 +41,7 @@ class CategoriesScreen extends StatelessWidget {
         20,
       ),
       child: GestureDetector(
-        onTap: () {
-        },
+        onTap: () {},
         child: Row(
           children: [
             Image(

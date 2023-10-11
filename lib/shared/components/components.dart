@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:shop_app/layout/home/home_cubit/home_cubit.dart';
 import 'package:shop_app/shared/styles/colors.dart';
 
 void navigateTo({
@@ -160,5 +159,3 @@ Widget defaultTextButton({
     ),
   );
 }
-
-

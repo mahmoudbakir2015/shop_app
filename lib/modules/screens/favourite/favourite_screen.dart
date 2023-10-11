@@ -26,10 +26,10 @@ class FavouriteScreen extends StatelessWidget {
                   context,
                 ),
               )
-            : Center(
+            : const Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     CircularProgressIndicator(),
                     Text("No favourite yet !!!"),
                   ],

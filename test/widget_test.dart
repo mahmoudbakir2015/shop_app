@@ -7,13 +7,37 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shop_app/layout/home/home_layout.dart';
 
 import 'package:shop_app/main.dart';
+import 'package:shop_app/modules/auth/login/login_screen.dart';
+import 'package:shop_app/modules/on_boarding/on_boarding_screen.dart';
+import 'package:shop_app/shared/components/constants.dart';
+import 'package:shop_app/shared/network/local/cache_helper.dart';
 
-void main() {
+Future<void> main() async {
+  Widget widget;
+  isLight = await CacheHelper.getData(
+    key: 'isLight',
+  );
+  onBoarding = await CacheHelper.getData(
+    key: 'onBoarding',
+  );
+  if (onBoarding != null) {
+    if (token != null) {
+      widget = const HomeLayout();
+    } else {
+      widget = const LoginScreen();
+    }
+  } else {
+    widget = const OnBoarding();
+  }
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp(
+      isLight: isLight ?? true,
+      startWidget: widget,
+    ));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
